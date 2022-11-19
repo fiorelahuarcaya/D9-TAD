@@ -1,10 +1,6 @@
+import React from "react";
 
-import React from 'react'
-
-const ButtonUI = ({
-  theme,
-  ...props
-}) => {
+const ButtonUI = ({ theme, ...props }) => {
   return (
     <button
       {...props}
@@ -13,25 +9,20 @@ const ButtonUI = ({
         color: theme.color,
       }}
     />
-  )
-}
-
-const Link = ({
-  url,
-  uiComponent,
-  uiProps,
-  children,
-}) => {
+  );
+};
+// BURRA EL QUE LO ENCUENTRE
+const Link = ({ url, uiComponent, uiProps, children }) => {
   const bridgeProps = {
     ...uiProps,
-    onClick: () => window.open(url, '_blank') 
-  }
+    onClick: () => window.open(url, "_blank"),
+  };
 
-  return React.createElement(uiComponent, bridgeProps, children)
-}
+  return React.createElement(uiComponent, bridgeProps, children);
+};
 
 const Client = () => {
-  const theme = { backgroundColor: 'blue', color: 'white' }
+  const theme = { backgroundColor: "blue", color: "white" };
   return (
     <Link
       url="http://github.com/themithy/react-design-patterns"
@@ -40,8 +31,7 @@ const Client = () => {
     >
       See other patterns
     </Link>
-  )
-}
+  );
+};
 
-export default Client
-
+export default Client;
